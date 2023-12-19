@@ -6,7 +6,7 @@
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
 	
-	<version>0.1.6-Releases</version> 
+	<version>0.1.7-Releases</version> 
 	
 	<name>maven-web-application</name>
 

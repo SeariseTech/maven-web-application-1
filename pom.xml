@@ -107,7 +107,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>walmart</finalName>
+		<finalName>Benz</finalName>
 		
 		<plugins>
 			<plugin>

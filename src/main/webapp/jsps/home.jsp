@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Walmart Web applications United State Of America Project.</h1>
+<h1 align="center">Welcome to Mercedes Benz Web applications United State Of America Project.</h1>
 <h1 align="center">We are developing and supporting quality Software Solutions at Searise Technology, We are trainning Engineers to become millions. We have clients globally.
 	           We are raising millionaires in IT automation. Our Devops Engineer are OpeOlu, Glory, Yinka, and Biyi
 	We offer Training for DevOps with Linux and Cloud equipping IT Engineers for best performance.

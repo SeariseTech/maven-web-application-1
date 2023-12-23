@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Lamborghini Web applications United State Of Africa Project.</h1>
+<h1 align="center">Welcome to Chase Web applications United State Of Africa Project developed by SeariseTech.</h1>
 <h1 align="center">Searise Technology is developing and supporting quality Software Solutions at Searise Technology, We are trainning Engineers to become millions. We have clients globally.
 	           We are raising millionaires in IT automation. Our Devops Engineer are OpeOlu, Glory, Yinka, and Biyi
 	We offer Training for DevOps with Linux and Cloud equipping IT Engineers for best performance.

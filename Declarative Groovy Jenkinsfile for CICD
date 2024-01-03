@@ -1,0 +1,67 @@
+pipeline{
+  agent {
+    label 'master'
+  } 
+  tools {
+    maven 'maven3.9.6'
+  }
+  //options{}
+  //triggers{}
+  stages {
+    stage('1Clone'){
+      steps{
+        sh "echo 'cloning the latest application version' "
+        git "https://github.com/SeariseTech/maven-web-application-1.git"
+        sh "echo 'latest application version available for testing and build' "
+      }
+    }
+    stage('2TestBuild'){
+      steps{
+        sh "echo 'running JUnit-test-cases' "
+        sh "echo 'testing must passed to create artifacts ' "
+        sh "mvn clean package" 
+      }
+    }
+    stage('3CodeQualityAnalysis') {
+    steps{
+        sh "echo setup sonarQube authentication"
+        sh "echo 'Perfoming CodeQualityAnalysis' "
+        sh "mvn sonar:sonar"      
+    }
+   }
+   stage('4UploadArtifacts') {
+    steps{
+      sh "echo configure nexus authentication"
+      //sh "mvn deploy"
+      sh "echo artifacts uploaded"
+    }
+   }
+     stage('5deploy') {
+    steps{
+      deploy adapters: [tomcat9(credentialsId: 'Tomcat-for Tesla', path: '', url: 'http://3.90.251.200:1978/')], contextPath: null, war: 'target/*war'
+        }
+    }
+  }
+  post{
+    always{
+      emailext body: '''Great Job Team!!!
+We got this done!!
+
+SeariseTech''', recipientProviders: [buildUser(), contributor(), developers(), upstreamDevelopers()], subject: 'Build Success', to: 'admin@searistech.com'
+
+    }
+    success{
+      emailext body: '''Great Job Team!!!
+We got this done!!
+
+SeariseTech''', recipientProviders: [buildUser(), contributor(), developers(), upstreamDevelopers()], subject: 'Build Success', to: 'admin@searistech.com'
+
+    }
+    failure{
+      emailext body: '''Please review this job.
+Review and Troubleshoot
+
+SeariseTech''', recipientProviders: [buildUser(), contributor(), developers(), upstreamDevelopers()], subject: 'Build failed', to: 'admin@searistech.com'
+
+    }
+  } 

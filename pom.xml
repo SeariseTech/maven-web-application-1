@@ -107,7 +107,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>chasebank</finalName>
+		<finalName>Tesla-Projects</finalName>
 		
 		<plugins>
 			<plugin>
